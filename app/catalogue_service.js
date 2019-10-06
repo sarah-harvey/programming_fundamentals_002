@@ -21,31 +21,113 @@ const catalogue = [
   "Why Be Happy When You Could Be Normal? by Jeanette Winterson (19)",
   "The Origin of Species by Charles Darwin (50)"
 ];
-
+//is the reason npm test keeps saying 'function checkBook is not a function' because we need to break the array down into OOP e.g. title, author, quantity?
 function checkBook(title) {
-  if (!title) throw new Error("Please provide a title");
-  // Your code here
+  if (!title) throw new Error("Please provide a title"); 
+  let result = false;
+//loop through the array until it finds the title then return true.
+  for (let i = 0; i < catalogue.length; i++) {
+    const book = catalogue[i];
+    //let titleAndAuthor = catalogue[i].toLowerCase();
+    //let titleFound = titleAndAuthor.includes(title.toLowerCase());
+    if (book.includes(title)) {
+      result = true;
+    }
+  }
+
+  return result;
 }
+
+
+  // for (let i = 0; i < catalogue.length; i++ ) {
+  // 
+  
+  //   let titleAndAuthor = catalogue[i].toLowerCase();
+  // //give back the title and author
+  //   
+  // //if title is found return true/false
+  //   if(titleFound) {
+  //     return true;
+  //   } else {
+  
+  // return false;
+ //}
+//}
+//}
 
 function countBooksByKeyword(keyword) {
   if (!keyword) throw new Error("Please provide a keyword");
-  // Your code here
-}
+  for (let i = 0; i < catalogue.length; i++) {
+    const keyword = catalogue[i];
+    if (bookTitle.toLowerCase().includes(title.toLowerCase())) {
+        return true;
+      }
+  
+    }
+    if (book.includes(keyword)) {
+        return //number of instances;
+        } 
+  }
+  // countBooksByKeyword("The");
+  // for (let i = 0; i < catalogue.length; i++) {
+  //   const keyword = catalogue[i];
+  //   if (catalogue.includes(keyword)) {
+  //     return true;
+  //   } else {
+  //     return false;
+ 
 
 function getBooksByAuthor(author) {
   if (!author) throw new Error("Please provide an author");
-  // Your code here
+  for (let key in catalogue) {
+    const value = catalogue[key];
+    [key]= value;
+
+    return objectToReturn;
+}
 }
 
 function getStockCount(title) {
   if (!title) throw new Error("Please provide a title");
-  // Your code here
-}
-
+    //if quantity is over 0 then book is in stock
+    if (title.quantity > 0) {
+      return result;
+    } else {
+      return result;
+    }
+   //If the quantity is < 0 or 0, not in stock
+    if (title.quantity <= 0) {
+      return false;
+    }
+   
+  }
 function stockReview(title) {
   if (!title) throw new Error("Please provide a title");
-  // Your code here
+  // if (title.quantity === 0) {
+  //   return ("Not in Stock");
+  // } else if (title.quantity >1 but <=5) {
+  //   return ("Low Stock");
+  // } else if (title.quantity >=6 but <=10) {
+    switch(stockReview) {
+      case(title.quantity === 0):
+        text = "Not in Stock";
+        break;
+      
+      case(title.quantity > 1 && <=5):
+        text = "Low Stock";
+        break;
+      
+      case(title.quantity >=6 && <=10):
+        text = "Medium Stock";
+        break;
+
+      case(title.quantity >=11):
+        text = "High Stock";
+    }  
+
 }
+
+
 
 module.exports = {
   checkBook,
@@ -53,4 +135,4 @@ module.exports = {
   getBooksByAuthor,
   getStockCount,
   stockReview
-};
+}

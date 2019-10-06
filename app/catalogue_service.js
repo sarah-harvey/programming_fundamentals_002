@@ -113,15 +113,15 @@ function stockReview(title) {
         text = "Not in Stock";
         break;
       
-      case(title.quantity > 1 && <=5):
+      case(title.quantity > 1 && <= 5):
         text = "Low Stock";
         break;
       
-      case(title.quantity >=6 && <=10):
+      case(title.quantity >=6 && <= 10):
         text = "Medium Stock";
         break;
 
-      case(title.quantity >=11):
+      case(title.quantity >= 11):
         text = "High Stock";
     }  
 
